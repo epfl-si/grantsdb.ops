@@ -1,0 +1,15 @@
+# https://github.com/epfl-si/ansible-collection-rhel/blob/main/roles/user/README.md
+- name: Create GrantsDB's VM administrators
+  epfl_si.rhel.user:
+    user_name: '{{ item.username }}'
+    user_shell: '{{ item.shell | default("/bin/zsh") }}'
+    # user_path_add: ['usr/local/bin']
+    user_authorized_keys_exclusive: true
+    user_authorized_keys:
+      - ssh_key: '{{ item.ssh.key }}'
+        comment: '{{ item.ssh.comment }}'
+    user_umask: '0027'
+  with_items: 
+    - '{{ administrators }}'
+  tags:
+    - grants.admin

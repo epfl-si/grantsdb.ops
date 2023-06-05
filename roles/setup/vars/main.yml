@@ -1,0 +1,10 @@
+
+administrators:
+  - username: 'nborboen'
+    ssh:
+      key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKLcfkjjh5FCHO5bVl5+SfD7Z0bp7WD1pG8aBe91hojd'
+      comment: 'nborboen@epfl.ch'
+  - username: 'cangiani'
+    ssh:
+      key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2kFozX/XNBKuI0Ycr60Ft4bB1MDa+XvJdpLaJKfXrd'
+      comment: 'cangiani@epfl.ch'
