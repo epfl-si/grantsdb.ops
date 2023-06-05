@@ -1,0 +1,18 @@
+all:
+  hosts:
+    grantsprod-1:
+      host_url: https://grantsdb.epfl.ch/
+      ansible_host: darsrv1.epfl.ch
+      ansible_user: "{{ grantsible_user }}"
+      ansible_port: 22
+      ansible_python_interpreter: /opt/rh/rh-python36/root/usr/bin/python3
+      inventory_environment: prod
+      host_url: https://grantsdb.epfl.ch/
+    grantsprod-2:
+      host_url: https://grantsdb.epfl.ch/
+      ansible_host: darsrv3.epfl.ch
+      ansible_user: "{{ grantsible_user }}"
+      ansible_port: 22
+      ansible_python_interpreter: /opt/rh/rh-python36/root/usr/bin/python3
+      inventory_environment: prod
+      host_url: https://grantsdb.epfl.ch/

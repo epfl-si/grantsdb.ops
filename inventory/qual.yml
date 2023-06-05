@@ -1,0 +1,9 @@
+all:
+  hosts:
+    grantsqualite:
+      ansible_host: darsrv2.epfl.ch
+      ansible_user: "{{ grantsible_user }}"
+      ansible_port: 22
+      ansible_python_interpreter: /opt/rh/rh-python36/root/usr/bin/python3
+      inventory_environment: qual
+      host_url: https://grantsqualite.epfl.ch/
