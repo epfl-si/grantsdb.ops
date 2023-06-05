@@ -1,0 +1,32 @@
+- name: Create {{ application_deployment_path }} directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ application_deployment_path }}"
+    state: directory
+    mode: '01755'
+    owner: apache
+    group: apache
+  become: yes
+  tags:
+    - grants.app
+    - grants.app.mkdir
+
+- name: Git clone or update GrantsDB on branch {{ git_branch }}
+  ansible.builtin.git:
+    repo: "ssh://git@c4science.ch/diffusion/3361/grantsdb.git"
+    dest: "{{ application_deployment_path }}"
+    version: "{{ git_branch | default('master') }}"
+    force: yes
+  register: _git_clone_output
+  ignore_errors: yes
+  tags:
+    - grants.app
+    - grants.app.clone
+
+- name: Display the Git output
+  debug:
+    msg: "{{ _git_clone_output.msg }}"
+  when: "_git_clone_output.msg is defined"
+  failed_when: "_git_clone_output.stderr is defined and 'fatal: destination path' in _git_clone_output.stderr"
+  tags:
+    - grants.app
+    - grants.app.clone

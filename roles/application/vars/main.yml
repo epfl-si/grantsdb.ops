@@ -1,0 +1,1 @@
+git_branch: "'master' if {{ inventory_environment }} is prod else {{ inventory_environment }}"

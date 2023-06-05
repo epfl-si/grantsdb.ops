@@ -3,3 +3,9 @@
   gather_facts: no
   roles:
     - role: roles/dummy
+
+- name: Setup the GrantsDB application
+  hosts: all
+  gather_facts: no
+  roles:
+    - role: roles/application
