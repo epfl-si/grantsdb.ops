@@ -29,7 +29,8 @@ ensure_ansible () {
 inventories () {
   case "$inventory_mode" in
     # dev)  echo "-i inventory/dev.yml"  ;; # dev means local
-    test) echo "-i inventory/test.yml" ;; # test means grantsdev.epfl.ch
+    test) echo "-i inventory/new-test.yml" ;; 
+    old-test) echo "-i inventory/test.yml" ;; # test means grantsdev.epfl.ch
     qual) echo "-i inventory/qual.yml" ;; # qual means grantsqualite.epfl.ch
     prod) echo "-i inventory/prod.yml" ;; # prod means grantsdb.epfl.ch
     test-and-qual) echo "-i inventory/test.yml -i inventory/qual.yml" ;;

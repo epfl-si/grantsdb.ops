@@ -1,0 +1,10 @@
+all:
+  hosts:
+    newgrantsdev:
+      ansible_host: 10.95.80.121
+      ansible_user: root
+      ansible_port: 22
+      #ansible_python_interpreter: /opt/rh/rh-python36/root/usr/bin/python3
+      inventory_environment: test
+      host_url: https://grantsdev.epfl.ch/
+      application_deployment_path: /www/grantsdb-test/web
