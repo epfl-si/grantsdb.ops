@@ -1,0 +1,5 @@
+- name: Dummy
+  hosts: all
+  gather_facts: no
+  roles:
+    - role: roles/dummy

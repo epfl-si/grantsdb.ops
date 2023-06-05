@@ -1,0 +1,8 @@
+all:
+  hosts:
+    grantsdev:
+      ansible_host: darsrv2.epfl.ch
+      ansible_user: "{{ grantsible_user }}"
+      ansible_port: 22
+      inventory_environment: test
+      host_url: https://grantsdev.epfl.ch/
